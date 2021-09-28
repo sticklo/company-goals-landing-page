@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";//The Router, Switch, and Route will help us move between our created component and the main App.js.
+import Landing from "./components/Landing"; //This is to import the component created in the Landing.js file.
+import './App.css'; //Load a set of predefined CSS that will define how HTML elements in the landing page behave.
+ 
+function App() {   //main app
+    return(
+      <div>
+        <Router>
+          <Switch>
+            <Route path="/">
+                <Landing />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    )
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
 }
-
 export default App;
